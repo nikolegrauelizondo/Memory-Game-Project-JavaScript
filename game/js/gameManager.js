@@ -1,32 +1,72 @@
-import { HomeController } from "./controllers/home/homeController.js";
+import { CreditsController } from "./controllers/credits/creditsController.js";
 import { DifficultyController } from "./controllers/difficulty/difficultyController.js";
+import { HomeController } from "./controllers/home/homeController.js";
+import { LoginController } from "./controllers/login/loginController.js";
+import { PlayController } from "./controllers/play/playController.js"
+import { ScoresController } from "./controllers/scores/scoresController.js"
 import { ThemesController } from "./controllers/themes/themesController.js"
+import { CREDITS_STATE, DIFFICULTY_STATE, HOME_STATE, LOGIN_STATE, PLAY_STATE, SCORES_STATE, THEMES_STATE } from "./libs/constants.js";
 
 export class GameManager {
     constructor() {
-        var navigationContainer = document.getElementById('navigationContainer');
+        this.controller = null;
+        this.contentContainer = document.getElementById('contentContainer');
+        this.navigationContainer = document.getElementById('navigationContainer');
         this.backBtn = document.getElementById('navigationContainer-back-button');
         this.title = document.getElementById('navigationContainer-title');
-        var contentContainer = document.getElementById('contentContainer');
-        this.goto(1);
+        this.backBtn.onclick = this.goto.bind(this, HOME_STATE);
+
+        this.homeController = new HomeController(this, this.contentContainer);
+        this.presenting(HOME_STATE);
     }
 
-    goto(controllerID) {
-        switch (controllerID) {
-            case 1:
-                this.title.innerHTML = 'Home';
-                this.controller = new HomeController(this, contentContainer);
+    presenting(state) {
+
+        if (this.controller !== null) {
+            this.controller.delete();
+            this.controller = null;
+        }
+
+        this.backBtn.classList.remove('hidden');
+        switch (state) {
+            case CREDITS_STATE:
+                this.title.innerHTML = 'Credits';
+                this.controller = new CreditsController(this, this.contentContainer);
                 break;
-            case 2:
+            case DIFFICULTY_STATE:
                 this.title.innerHTML = 'Difficulty';
-                this.controller = new DifficultyController(this, contentContainer);
+                this.controller = new DifficultyController(this, this.contentContainer);
                 break;
-            case 3:
+            case HOME_STATE:
+                this.backBtn.classList.add('hidden');
+                this.title.innerHTML = 'Home';
+                // this.controller = new HomeController(this, this.contentContainer);
+                break;
+            case LOGIN_STATE:
+                this.title.innerHTML = 'Login';
+                this.controller = new LoginController(this, this.contentContainer);
+                break;
+            case PLAY_STATE:
+                this.title.innerHTML = 'Play';
+                this.controller = new PlayController(this, this.contentContainer);
+                break;
+            case SCORES_STATE:
+                this.title.innerHTML = 'Scores';
+                this.controller = new ScoresController(this, this.contentContainer);
+                break;
+            case THEMES_STATE:
                 this.title.innerHTML = 'Themes';
-                this.controller = new ThemesController(this, contentContainer);
+                this.controller = new ThemesController(this, this.contentContainer);
                 break;
-            default:
-                break;
+        }
+    }
+
+    goto(state) {
+
+        if (this.controller !== null) {
+            this.controller.hide(this.presenting.bind(this, state));
+        } else {
+            this.presenting(state);
         }
     }
 }

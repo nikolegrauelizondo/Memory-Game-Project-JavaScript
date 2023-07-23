@@ -7,6 +7,6 @@ export class CreditsView extends View {
 
         var text = document.createElement('p');
         this.container.appendChild(text);
-        loginBtn.text = 'Add credits here.';
+        text.innerHTML = 'Add credits here.';
     }
 }
