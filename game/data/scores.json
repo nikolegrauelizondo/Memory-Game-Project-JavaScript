@@ -1,0 +1,62 @@
+[
+    {
+        "clicks": 14,
+        "score": 25,
+        "time": 11,
+        "username": "coco"
+    },
+    {
+        "clicks": 16,
+        "score": 30,
+        "time": 14,
+        "username": "koko"
+    },
+    {
+        "clicks": 20,
+        "score": 47,
+        "time": 27,
+        "username": "Esteban"
+    },
+    {
+        "clicks": 36,
+        "score": 121,
+        "time": 85,
+        "username": "Superman"
+    },
+    {
+        "clicks": 56,
+        "score": 123,
+        "time": 67,
+        "username": "tico"
+    },
+    {
+        "clicks": 66,
+        "score": 151,
+        "time": 85,
+        "username": "oscar"
+    },
+    {
+        "clicks": 70,
+        "score": 172,
+        "time": 102,
+        "username": "Superman"
+    },
+    {
+        "clicks": 72,
+        "score": 185,
+        "time": 113,
+        "username": "Benjamin"
+    },
+    {
+        "clicks": 98,
+        "score": 218,
+        "time": 120,
+        "username": "Nath"
+    },
+    {
+        "clicks": 134,
+        "score": 1373,
+        "time": 1239,
+        "username": "Fabian"
+    }
+]

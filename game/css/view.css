@@ -1,0 +1,12 @@
+.view-fadeContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--fade-color);
+    opacity: 0;
+}
+
+.view-elementsContainer {
+    width: 100%;
+    height: 100%;
+}
