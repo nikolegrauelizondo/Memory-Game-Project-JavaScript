@@ -15,7 +15,16 @@ export class HomeView extends View {
         var creditsBtn = div({ innerHTML: 'Credits', className: 'game-button', onclick: this.onButtonClick.bind(this, CREDITS_STATE) }, this.container);
     }
 
-    onButtonClick(state, event) {
-        this.controller.goto(state);
+    onButtonClick(state) {
+        var event = new CustomEvent('home-button-click', {
+            detail: {
+                state: state,
+            },
+            bubbles: true,
+            cancelable: true,
+            composed: false,
+        });
+
+        this.container.dispatchEvent(event);
     }
 }

@@ -10,7 +10,7 @@ export class Controller {
         this.view.delete();
     }
 
-    hide(callback) {
-        this.view.hide(callback);
+    hide(state) {
+        this.view.hide(state);
     }
 }
