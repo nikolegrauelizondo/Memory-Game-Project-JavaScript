@@ -1,0 +1,19 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "Memory Game Front End",
+  "main": "index.js",
+  "scripts": {
+    "play": "gulp play",
+    "bundle": "gulp bundle",
+    "clean": "gulp clean"
+  },
+  "author": "Nikole Grau Elizondo",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "rollup": "^3.26.3"
+  }
+}

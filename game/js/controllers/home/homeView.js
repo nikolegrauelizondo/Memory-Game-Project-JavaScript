@@ -16,6 +16,6 @@ export class HomeView extends View {
     }
 
     onButtonClick(state, event) {
-        this.controller.goto(state)
+        this.controller.goto(state);
     }
 }
