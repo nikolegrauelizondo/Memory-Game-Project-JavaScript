@@ -17,6 +17,8 @@ export class PlayController extends Controller {
         window.addEventListener('card-selected', (event) => {
             this.onCardSelected();
         });
+
+        this.hiddenTimer = null;
     }
 
     showCards(cards) {
@@ -39,7 +41,10 @@ export class PlayController extends Controller {
         this.view.updateHUD(this.clicks, this.time);
     }
 
-    onCardSelected(event) {
+    onCardSelected() {
+
+        if (this.hiddenTimer !== null) return;
+
         var event = new CustomEvent('show-card-on-selected', {
             detail: {
                 test: 9,
@@ -49,5 +54,48 @@ export class PlayController extends Controller {
             composed: false,
         });
         this.view.container.dispatchEvent(event);
+
+        let cardSelected1 = null;
+        let cardSelected2 = null;
+
+        this.cards.forEach(card => {
+            if (!card.isDiscovered) {
+                if (cardSelected1 === null && card.isSelected) {
+                    cardSelected1 = card;
+                    console.log(card);
+                } else if (cardSelected2 === null && card.isSelected) {
+                    cardSelected2 = card;
+                }
+            }
+        });
+
+        if (cardSelected1 !== null && cardSelected2 !== null) {
+            if (cardSelected1.id === cardSelected2.id) {
+                var event = new CustomEvent('show-card-on-discovered', {
+                    detail: {
+                        test: 9,
+                    },
+                    bubbles: true,
+                    cancelable: true,
+                    composed: false,
+                });
+                this.view.container.dispatchEvent(event);
+            } else {
+                this.hiddenTimer = window.setTimeout(() => {
+                    var event = new CustomEvent('hide-selected-card', {
+                        detail: {
+                            test: 9,
+                        },
+                        bubbles: true,
+                        cancelable: true,
+                        composed: false,
+                    });
+                    this.view.container.dispatchEvent(event);
+                    window.clearTimeout(this.hiddenTimer);
+                    this.hiddenTimer = null;
+                    //TODO:Check If Game Is Complete.
+                }, 1000);
+            }
+        }
     }
 }
