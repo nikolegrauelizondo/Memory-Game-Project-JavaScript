@@ -1,0 +1,34 @@
+.cardView {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 60px;
+    border-color: purple;
+    border-width: 2px;
+    border-style: solid;
+    width: 80px;
+    height: 100px;
+}
+
+.cardView-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+    width: 100px;
+    height: 120px;
+    margin-top: 10px;
+}
+
+.cardView-hidden {
+    background-color: red;
+}
+
+.cardView-selected {
+    background-color: blue;
+}
+
+.cardView-discovered {
+    background-color: green;
+}

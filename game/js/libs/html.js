@@ -10,6 +10,10 @@ export const p = function (attributes, parent) {
 //     return createElement('img', attributes, parent);
 // }
 
+export const input = function (attributes, parent) {
+    return createElement('input', attributes, parent);
+}
+
 const createElement = function (type, attributes, parent) {
     var element = document.createElement(type);
     parent.appendChild(element);

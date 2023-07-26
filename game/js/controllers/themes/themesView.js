@@ -1,8 +1,8 @@
 import { THEME_FACES, THEME_FLAGS, THEME_FOOD } from "../../libs/constants.js";
 import { div, p } from "../../libs/html.js";
-import { View } from "../view.js";
+import { ControllerView } from "../controllerView.js";
 
-export class ThemesView extends View {
+export class ThemesView extends ControllerView {
     constructor(controller, parent) {
         super(controller, parent);
         this.container.id = 'themesView';

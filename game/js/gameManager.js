@@ -20,7 +20,6 @@ export class GameManager {
         this.backBtn.onclick = this.goto.bind(this, HOME_STATE);
 
         this.homeController = new HomeController(this, this.contentContainer);
-        this.presenting(PLAY_STATE);
 
         this.contentContainer.addEventListener('home-button-click', (event) => {
             this.presenting(event.detail.state);
@@ -40,7 +39,17 @@ export class GameManager {
             this.saveTheme();
         });
 
+        this.contentContainer.addEventListener('username-entered', (event) => {
+            this.username = event.detail.username;
+            this.saveUsername();
+            this.goto(HOME_STATE);
+        });
+
         this.loadDifficulty();
+        this.loadTheme();
+        this.loadUsername();
+
+        this.presenting(PLAY_STATE);
     }
 
     presenting(state) {
@@ -110,5 +119,16 @@ export class GameManager {
 
     saveTheme() {
         localStorage.setItem('theme', this.theme);
+    }
+
+    saveUsername() {
+        localStorage.setItem('username', this.username);
+    }
+
+    loadUsername() {
+        if (localStorage.getItem('username')) {
+            this.username = localStorage.getItem('username');
+            console.log('USERNAME:', this.username);
+        }
     }
 }

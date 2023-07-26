@@ -1,6 +1,6 @@
-import { View } from "../view.js";
+import { ControllerView } from "../controllerView.js";
 
-export class ScoresView extends View {
+export class ScoresView extends ControllerView {
     constructor(controller, parent) {
         super(controller, parent);
         this.container.id = 'scoresView';

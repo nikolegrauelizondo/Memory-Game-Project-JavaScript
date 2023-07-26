@@ -12,8 +12,27 @@
 }
 
 .playView-cardsContainer {
+    width: 80%;
+
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.playView-hudContainer {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playView-text {
+    font-size: 25px;
+    /* color: white; */
+}
+
+.playView-resetBtn {
+    width: 130px;
+    font-size: 25px;
 }

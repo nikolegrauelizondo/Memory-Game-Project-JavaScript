@@ -1,8 +1,8 @@
 import { DIFFICULTY_LOW, DIFFICULTY_MEDIUM, DIFFICULTY_HIGH } from "../../libs/constants.js";
 import { div, p } from "../../libs/html.js";
-import { View } from "../view.js";
+import { ControllerView } from "../controllerView.js";
 
-export class DifficultyView extends View {
+export class DifficultyView extends ControllerView {
     constructor(controller, parent) {
         super(controller, parent);
         this.container.id = 'difficultyView';
