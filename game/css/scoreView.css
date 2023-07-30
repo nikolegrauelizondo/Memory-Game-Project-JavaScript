@@ -1,0 +1,55 @@
+.scoreView {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 80%;
+    background-color: var(--primary-color);
+    margin-top: 10px;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: var(--primary-color);
+    border-style: solid;
+}
+
+.scoreView-nameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    color: yellow;
+    font-size: 30px;
+    width: 100%;
+}
+
+.scoreView-valuesContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.scoreView-valueContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scoreView-valueTitle {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.scoreView-value-description {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}

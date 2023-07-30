@@ -11,6 +11,7 @@ export class GameManager {
     constructor() {
         this.difficulty = DIFFICULTY_MEDIUM;
         this.theme = THEME_FOOD;
+        this.username = '';
 
         this.controller = null;
         this.contentContainer = document.getElementById('contentContainer');
@@ -49,7 +50,7 @@ export class GameManager {
         this.loadTheme();
         this.loadUsername();
 
-        this.presenting(PLAY_STATE);
+        // this.presenting(SCORES_STATE);
     }
 
     presenting(state) {

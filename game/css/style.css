@@ -16,6 +16,18 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* 
+body {
+    background-color: var(--background-color);
+}    
+*/
+
+hr {
+    width: 100%;
+    border-color: var(--primary-color-dark);
+    margin-bottom: 20px;
+}
+
 h1 {
     color: var(--primary-color);
 }
