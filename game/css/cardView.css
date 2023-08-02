@@ -1,35 +1,38 @@
 .cardView {
-    display: flex;
     align-items: center;
-    justify-content: center;
-
+    /* border: 3.5px solid purple; */
+    display: flex;
     font-size: 60px;
-    border-color: purple;
-    border-width: 2px;
-    border-style: solid;
-    width: 80px;
-    height: 100px;
+    height: 105px;
+    justify-content: center;
+    width: 85px;
 }
 
 .cardView-container {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: blueviolet;
-    width: 100px;
+    /* background-color: var(--neutral-color-dark); */
+    border-radius: 10px;
+    display: flex;
     height: 120px;
+    justify-content: center;
     margin-top: 10px;
-    border-radius: 5px;
+    width: 100px;
 }
 
 .cardView-hidden {
-    background-color: red;
+    background-color: var(--tertiary-color-dark);
+    border: 6px solid var(--tertiary-color);
+    border-radius: 10px;
 }
 
 .cardView-selected {
-    background-color: blue;
+    background-color: #079AC6;
+    border: 6px solid #00C4FF;
+    border-radius: 10px;
 }
 
 .cardView-discovered {
-    background-color: green;
+    background-color: #B5BB3A;
+    border: 6px solid #E8F044;
+    border-radius: 10px;
 }

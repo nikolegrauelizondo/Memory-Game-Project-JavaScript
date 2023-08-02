@@ -7,7 +7,7 @@ export class ScoreView extends View {
         this.score = score;
         this.container.className = 'scoreView';
         var nameContainer = div({ className: 'scoreView-nameContainer' }, this.container);
-        hr({}, this.container);
+        // hr({}, this.container);
         var valuesContainer = div({ className: 'scoreView-valuesContainer' }, this.container);
 
         var scoreContainer = div({ className: 'scoreView-valueContainer' }, valuesContainer);

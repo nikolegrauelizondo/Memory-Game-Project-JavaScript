@@ -1,5 +1,5 @@
 import { CREDITS_STATE, DIFFICULTY_STATE, LOGIN_STATE, PLAY_STATE, SCORES_STATE, THEMES_STATE } from "../../libs/constants.js";
-import { div, p } from "../../libs/html.js";
+import { div, img } from "../../libs/html.js";
 import { ControllerView } from "../controllerView.js";
 
 export class HomeView extends ControllerView {
@@ -8,7 +8,8 @@ export class HomeView extends ControllerView {
         this.container.id = 'homeView';
         this.elementsContainer.className = 'homeView-elementsContainer';
 
-        // img({ src: './src/images/logo.svg', className: 'homeView-logo' }, this.elementsContainer);
+        img({ src: './images/logo.svg', className: 'homeView-logo' }, this.elementsContainer);
+
         // p({ innerHTML: 'Can You Beat This?', className: 'game-text' }, this.elementsContainer);
         // div({ innerHTML: 'Scores Data', className: 'homeView-scores-widget' }, this.elementsContainer);
 
@@ -18,6 +19,7 @@ export class HomeView extends ControllerView {
 
         // p({ innerHTML: 'Let's Check Other Things!', className: 'game-text homeView-game-text' }, this.elementsContainer);
         // var buttonsContainer = div({ className: 'homeView-buttonContainer' }, this.elementsContainer);
+
         var loginBtn = div({ innerHTML: 'Login', className: 'game-button', onclick: this.onButtonClick.bind(this, LOGIN_STATE) }, this.elementsContainer);
         var playBtn = div({ innerHTML: 'Play', className: 'game-button', onclick: this.onButtonClick.bind(this, PLAY_STATE) }, this.elementsContainer);
         var scoresBtn = div({ innerHTML: 'Scores', className: 'game-button', onclick: this.onButtonClick.bind(this, SCORES_STATE) }, this.elementsContainer); // Replace 'this.elementsContainer' to 'buttonsContainer'

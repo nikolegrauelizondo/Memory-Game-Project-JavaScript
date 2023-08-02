@@ -10,9 +10,9 @@ export const hr = function (attributes, parent) {
     return createElement('hr', attributes, parent);
 }
 
-// export const img = function (attributes, parent) {
-//     return createElement('img', attributes, parent);
-// }
+export const img = function (attributes, parent) {
+    return createElement('img', attributes, parent);
+}
 
 export const input = function (attributes, parent) {
     return createElement('input', attributes, parent);

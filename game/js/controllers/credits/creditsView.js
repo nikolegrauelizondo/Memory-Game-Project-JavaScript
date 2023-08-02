@@ -1,3 +1,4 @@
+import { p } from "../../libs/html.js";
 import { ControllerView } from "../controllerView.js";
 
 export class CreditsView extends ControllerView {
@@ -6,8 +7,6 @@ export class CreditsView extends ControllerView {
         this.container.id = 'creditsView';
         this.elementsContainer.className = 'creditsView-elementsContainer';
 
-        var text = document.createElement('p');
-        this.elementsContainer.appendChild(text);
-        text.innerHTML = 'Add credits here.';
+        this.creditsText = p({ innerHTML: 'Add credits here.', className: 'creditsView-text' }, this.elementsContainer);
     }
 }
