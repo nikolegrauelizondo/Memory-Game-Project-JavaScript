@@ -45,9 +45,9 @@ app.get('/scores', (request, response) => {
     response.send('Scores list!')
 });
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-});
+// app.listen(port, () => {
+//     console.log(`Example app listening on port ${port}`);
+// });
 
 function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
