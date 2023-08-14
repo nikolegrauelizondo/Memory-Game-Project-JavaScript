@@ -41,11 +41,11 @@ app.get('/cards/:difficulty/:theme', (request, response) => {
     response.send(JSON.stringify(data));
 });
 
-app.get('/scores', (request, response) => {
+app.get('/score', (request, response) => {
     // https://memory-game-project-javascript-default-rtdb.firebaseio.com/data/scores.json
     console.log(request.body);
     // console.log(request);
-    response.send('Scores list!')
+    response.send('Scores list!');
 });
 
 // app.listen(port, () => {
