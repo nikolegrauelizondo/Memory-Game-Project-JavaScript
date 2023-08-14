@@ -6,7 +6,8 @@
   "scripts": {
     "play": "gulp play",
     "bundle": "gulp bundle",
-    "clean": "gulp clean"
+    "clean": "gulp clean",
+    "deploy": "gulp deploy"
   },
   "author": "Nikole Grau Elizondo",
   "license": "ISC",
