@@ -43,8 +43,8 @@ app.get('/cards/:difficulty/:theme', (request, response) => {
 
 app.get('/scores', (request, response) => {
     // https://memory-game-project-javascript-default-rtdb.firebaseio.com/data/scores.json
-    console.log(request);
-    console.log(request);
+    console.log(request.body);
+    // console.log(request);
     response.send('Scores list!')
 });
 

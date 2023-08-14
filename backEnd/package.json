@@ -4,7 +4,8 @@
   "description": "Memory Game Back End",
   "main": "index.js",
   "scripts": {
-    "run": "node index.js"
+    "run": "vercel dev",
+    "deploy": "vercel --prod"
   },
   "author": "Nikole Grau Elizondo",
   "license": "ISC",

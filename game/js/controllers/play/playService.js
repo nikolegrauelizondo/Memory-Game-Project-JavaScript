@@ -8,7 +8,7 @@ export class PlayService extends Service {
 
     getCards(difficulty, theme) {
         var cards = [];
-        var url = `https://nikole-memory-game.vercel.app/cards/${difficulty}/${theme}`;
+        var url = `https://nikole-memory-game.vercel.app/cards/${2}/${theme}`;
         // var url = `http://localhost:3000/cards/${difficulty}/${theme}`;
         var request = new XMLHttpRequest();
         request.open('get', url);
@@ -29,7 +29,8 @@ export class PlayService extends Service {
     }
 
     sendScore(score, clicks, time, username) {
-        var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores`;
+        var url = `http://localhost:3000/score`;
+        // var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/scores`;
 
         var request = new XMLHttpRequest();
         request.open('POST', url);
