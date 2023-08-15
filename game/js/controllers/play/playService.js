@@ -29,8 +29,8 @@ export class PlayService extends Service {
     }
 
     sendScore(score, clicks, time, username) {
-        var url = `http://localhost:3000/score`;
-        // var url = `https://nikole-memory-game.vercel.app/score`;
+        // var url = `http://localhost:3000/score`;
+        var url = `https://nikole-memory-game.vercel.app/score`;
 
         var request = new XMLHttpRequest();
         request.open('POST', url);
