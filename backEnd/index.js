@@ -44,9 +44,15 @@ app.get('/cards/:difficulty/:theme', (request, response) => {
 
 app.get('/scores', (request, response) => {
     const url = 'https://memory-game-project-javascript-default-rtdb.firebaseio.com/data/scores.json';
-
-
-    response.send('Scores list!');
+    axios.get(url).then(function (result) {
+        console.log(result.data);
+        response.send(result.data);
+    }).catch(function (error) {
+        console.log(error);
+        response.send('Error getting scores');
+    }).finally(function () {
+        // Always Executed
+    });
 });
 
 app.post('/score', (request, response) => {
