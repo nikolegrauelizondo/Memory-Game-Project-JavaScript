@@ -1,3 +1,4 @@
+const axios = require('axios');
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -41,11 +42,28 @@ app.get('/cards/:difficulty/:theme', (request, response) => {
     response.send(JSON.stringify(data));
 });
 
-app.get('/score', (request, response) => {
-    // https://memory-game-project-javascript-default-rtdb.firebaseio.com/data/scores.json
-    console.log(request.body);
-    // console.log(request);
+app.get('/scores', (request, response) => {
+    const url = 'https://memory-game-project-javascript-default-rtdb.firebaseio.com/data/scores.json';
+
+
     response.send('Scores list!');
+});
+
+app.post('/score', (request, response) => {
+    const url = 'https://memory-game-project-javascript-default-rtdb.firebaseio.com/data/scores.json';
+    const score = JSON.parse(request.body);
+    if (score !== null &&
+        score.clicks !== null &&
+        score.time !== null &&
+        score.score !== null) {
+        axios.post(url, JSON.stringify(score)).then(function (result) {
+            response.send('Score stored successfully');
+        }).catch(function (error) {
+            response.send(error);
+        });
+    } else {
+        response.send('Score undefined or null');
+    }
 });
 
 // app.listen(port, () => {
