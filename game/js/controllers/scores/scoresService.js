@@ -15,7 +15,7 @@ export class ScoresService extends Service {
         request.onload = () => {
             if (request.status === 200) {
                 var data = JSON.parse(request.response);
-                console.log(data);
+                // console.log(data);
                 for (const key in data) {
                     const scoreData = data[key];
                     let score = new Score(scoreData.clicks, scoreData.score, scoreData.time, scoreData.username);
