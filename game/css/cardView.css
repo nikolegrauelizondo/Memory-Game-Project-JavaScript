@@ -2,10 +2,10 @@
     align-items: center;
     /* border: 3.5px solid purple; */
     display: flex;
-    font-size: 60px;
-    height: 105px;
+    font-size: 50px;
+    height: 95px;
     justify-content: center;
-    width: 85px;
+    width: 75px;
 }
 
 .cardView-container {
@@ -13,7 +13,7 @@
     /* background-color: var(--neutral-color-dark); */
     border-radius: 10px;
     display: flex;
-    height: 120px;
+    height: 115px;
     justify-content: center;
     margin-top: 10px;
     width: 100px;
