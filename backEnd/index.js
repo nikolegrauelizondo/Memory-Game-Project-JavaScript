@@ -55,23 +55,6 @@ app.get('/scores', (request, response) => {
     });
 });
 
-// app.post('/score', (request, response) => {
-//     const url = 'https://memory-game-project-javascript-default-rtdb.firebaseio.com/data/scores.json';
-//     const score = JSON.parse(request.body);
-//     if (score !== null &&
-//         score.clicks !== null &&
-//         score.time !== null &&
-//         score.score !== null) {
-//         axios.post(url, JSON.stringify(score)).then(function (result) {
-//             response.send('Score stored successfully');
-//         }).catch(function (error) {
-//             response.send(error);
-//         });
-//     } else {
-//         response.send('Score undefined or null');
-//     }
-// });
-
 app.post('/score', (request, response) => {
     let body = [];
     request.on('data', (chunk) => {
@@ -97,7 +80,7 @@ app.post('/score', (request, response) => {
             response.send('request.body undefined or null');
         }
     });
-});
+})
 
 // app.listen(port, () => {
 //     console.log(`Example app listening on port ${port}`);
@@ -107,23 +90,15 @@ function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getIconIndex(iconIndex, length, cards) {
+function getIconIndex(iconIndex, iconList) {
 
-    let newIconIndex = randomInteger(0, (length - 1));
-
-    for (let i = 0; i < cards.length; i++) {
-        const card = cards[i];
-        if (card.id === newIconIndex) {
-            return getIconIndex(iconIndex, length, cards);
-        }
-    }
+    let newIconIndex = randomInteger(0, (iconList.length - 1));
 
     if (iconIndex === newIconIndex) {
-        return getIconIndex(iconIndex, length, cards);
+        return getIconIndex(iconIndex, iconList);
     }
-
     return newIconIndex;
-};
+}
 
 function getCards(difficulty, theme) {
     var cards = [];
