@@ -16,14 +16,12 @@
 }
 
 .loginView-usernameIn {
-    /* align-items: center; */
     background-color: var(--neutral-color-light);
     border: 3.5px solid var(--secondary-color);
     border-radius: 10px;
     cursor: pointer;
     display: flex;
     font-size: 30px;
-    /* font-weight: bold; */
     height: 50px;
     justify-content: center;
     margin-bottom: 10px;

@@ -1,6 +1,5 @@
 .cardView {
     align-items: center;
-    /* border: 3.5px solid purple; */
     display: flex;
     font-size: 50px;
     height: 95px;
@@ -10,7 +9,6 @@
 
 .cardView-container {
     align-items: center;
-    /* background-color: var(--neutral-color-dark); */
     border-radius: 10px;
     display: flex;
     height: 115px;

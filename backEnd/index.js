@@ -51,7 +51,6 @@ app.get('/scores', (request, response) => {
         console.log(error);
         response.send('Error getting scores');
     }).finally(function () {
-        // Always Executed
     });
 });
 

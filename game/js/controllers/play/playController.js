@@ -86,7 +86,6 @@ export class PlayController extends Controller {
                     this.killGameTimer();
                     let score = this.clicks + this.time;
                     this.service.sendScore(score, this.clicks, this.time, this.gameManager.username);
-                    // TODO: Show GameComplete Controller?
                 }
             } else {
                 this.hiddenTimer = window.setTimeout(() => {

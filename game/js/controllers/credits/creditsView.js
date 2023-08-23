@@ -7,8 +7,6 @@ export class CreditsView extends ControllerView {
         this.container.id = 'creditsView';
         this.elementsContainer.className = 'creditsView-elementsContainer';
 
-        // this.creditsText = p({ innerHTML: 'Add credits here.', className: 'creditsView-text' }, this.elementsContainer);
-
         this.creditsFirstTitle = p({ innerHTML: 'Team Lead:', className: 'creditsView-first-title' }, this.elementsContainer);
 
         this.creditsFirstText = p({ innerHTML: 'Esteban Padilla Sánchez', className: 'creditsView-first-text' }, this.elementsContainer);

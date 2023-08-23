@@ -20,8 +20,6 @@ export class CardView extends View {
         window.addEventListener('hide-selected-card', (event) => {
             this.hide();
         });
-
-        // this.iconContainer.innerHTML = this.card.icon;
     }
 
     onSelected() {
