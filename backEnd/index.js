@@ -90,29 +90,29 @@ function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// function getIconIndex(iconIndex, iconList) {
-//     let newIconIndex = randomInteger(0, (iconList.length - 1));
-//     if (iconIndex === newIconIndex) {
-//         return getIconIndex(iconIndex, iconList);
-//     }
-//     return newIconIndex;
-// }
-
-function getIconIndex(iconIndex, length, cards) {
-    let newIconIndex = randomInteger(0, (length - 1));
-    for (let i = 0; i < cards.length; i++) {
-        const card = cards[i];
-        if (card.id === newIconIndex) {
-            return getIconIndex(iconIndex, length, cards);
-        }
-    }
-
+function getIconIndex(iconIndex, iconList) {
+    let newIconIndex = randomInteger(0, (iconList.length - 1));
     if (iconIndex === newIconIndex) {
-        return getIconIndex(iconIndex, length, cards);
+        return getIconIndex(iconIndex, iconList);
     }
-
     return newIconIndex;
 }
+
+// function getIconIndex(iconIndex, length, cards) {
+//     let newIconIndex = randomInteger(0, (length - 1));
+//     for (let i = 0; i < cards.length; i++) {
+//         const card = cards[i];
+//         if (card.id === newIconIndex) {
+//             return getIconIndex(iconIndex, length, cards);
+//         }
+//     }
+
+//     if (iconIndex === newIconIndex) {
+//         return getIconIndex(iconIndex, length, cards);
+//     }
+
+//     return newIconIndex;
+// }
 
 function getCards(difficulty, theme) {
     var cards = [];
